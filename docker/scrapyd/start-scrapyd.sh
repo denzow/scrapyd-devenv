@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+rm /twistd.pid
 
 scrapyd &
 echo "start scrapyd service"
