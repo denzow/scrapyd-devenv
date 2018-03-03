@@ -1,2 +1,5 @@
 *pyc
 .idea/*
+**/project.egg-info/*
+**/build/*
+setup.py

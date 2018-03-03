@@ -11,10 +11,10 @@ RUN pip install -v pip-tools==1.9.0
 ADD requirements.txt requirements.txt
 RUN pip-sync /app/requirements.txt
 
-RUN mkdir /etc/scrapyd/
+RUN mkdir /etc/scrapyd/ /scrapyd /scrapyd/eggs /scrapyd/logs /scrapyd/dbs
 ADD ./docker/scrapyd/scrapyd.conf /etc/scrapyd/scrapyd.conf
-ADD ./docker/scrapyd/start-scrapyd.sh /start-scrapyd.sh
-RUN chmod u+x /start-scrapyd.sh
+ADD ./docker/scrapyd/start-scrapyd.sh /usr/local/bin/start-scrapyd
+ADD ./docker/scrapyd/deploy-projects.sh /usr/local/bin/deploy-projects
 
 ADD . /app
 WORKDIR /

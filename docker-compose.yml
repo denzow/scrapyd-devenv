@@ -1,7 +1,7 @@
 service:
   build: .
   dockerfile: Dockerfile_scrapyd
-  command: '/start-scrapyd.sh'
+  command: 'start-scrapyd'
   volumes:
     - .:/app
   ports:
